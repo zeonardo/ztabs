@@ -5,16 +5,16 @@ import Tab from './index'
 import Tab2 from './tab2'
 
 const TabController: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(1)
+  const [active, setActive] = useState(1)
 
   const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const index = +event.currentTarget.value
-    setActiveIndex(index)
+    setActive(index)
   }
 
   return (
-    <div data-tab={activeIndex}>
-      <Tab className='controlled' active={activeIndex} onActiveChange={onClick}>
+    <div data-tab={active}>
+      <Tab className='controlled' active={active} onActiveChange={onClick}>
         <Tab.Pane title='First Pane'>First Pane Body</Tab.Pane>
         <Tab.Pane title='Second Pane'>Second Pane Body</Tab.Pane>
         <Tab.Pane title='Third Pane'>Third Pane Body</Tab.Pane>

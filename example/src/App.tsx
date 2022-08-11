@@ -6,7 +6,7 @@ function App() {
   return (
     <div className='App'>
       <h1>ZTABS</h1>
-      <Tab className='uncontrolled' initialActive={0} theme={{ color: { primary: "#00f" }}}>
+      <Tab className='uncontrolled' initialActive={0} theme={{ color: { primary: '#00f' } }}>
         <Tab.Pane title='First Pane'>
           <>
             <strong>First</strong> Pane Body

@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { TypeTabButtonProps, TypeThemeProps } from "../types"
+import styled from 'styled-components'
+import { TypeTabButtonProps, TypeThemeProps } from '../types'
 type StyleThemeProps = {
   theme?: TypeThemeProps
 }
@@ -16,17 +16,17 @@ export const TabList = styled.ul<TypeThemeProps>`
   @media only screen and (max-width: ${(props: StyleThemeProps) => props?.theme?.breakpoint?.small?.max}) {
     justify-content: flex-start;
   }
-  &::-webkit-scrollbar{
+  &::-webkit-scrollbar {
     width: 5px;
     height: 2px;
     background-color: ${(props: StyleThemeProps) => props?.theme?.color?.white};
   }
-  &::-webkit-scrollbar-track{
+  &::-webkit-scrollbar-track {
     border: none;
     background-color: ${(props: StyleThemeProps) => props?.theme?.color?.graylight};
     border-radius: 1px;
   }
-  &::-webkit-scrollbar-thumb{
+  &::-webkit-scrollbar-thumb {
     background-color: ${(props: StyleThemeProps) => props?.theme?.color?.gray};
     border-radius: 1px;
   }
@@ -37,15 +37,15 @@ export const TabListItem = styled.li<StyleThemeProps>`
 `
 
 export const TabListButton = styled.button<StyleThemeProps & TypeTabButtonProps>`
-  color: ${(props: StyleThemeProps & TypeTabButtonProps) => props.active ? props?.theme?.color?.primary : 'inherit'};
+  color: ${(props: StyleThemeProps & TypeTabButtonProps) => (props.active ? props?.theme?.color?.primary : 'inherit')};
   background: none;
   border: none;
-  border-bottom: 2px solid ${(props: TypeTabButtonProps) => props.active ? 'currentColor' : 'transparent'};
+  border-bottom: 2px solid ${(props: TypeTabButtonProps) => (props.active ? 'currentColor' : 'transparent')};
   padding: 0.6rem 1.2rem;
-  transition: all .1s linear;
+  transition: all 0.1s linear;
   white-space: nowrap;
 
-  &:hover{
-    color: ${(props: StyleThemeProps) => props?.theme?.color?.primary}
+  &:hover {
+    color: ${(props: StyleThemeProps) => props?.theme?.color?.primary};
   }
 `

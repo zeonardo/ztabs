@@ -1,4 +1,4 @@
-![GitHub all releases](https://img.shields.io/github/downloads/zeonardo/ptf-tabulator/total)
+![GitHub all releases](https://img.shields.io/github/downloads/zeonardo/ztabs/total)
 
 # ztabs
 
@@ -20,9 +20,11 @@ $ yarn add ztabs
 
 ```sh
 import Tab from "ztabs";
+```
 
 ...
 
+```html
 <Tab initialActive={0}>
   <Tab.Pane title="First Tab">
     Tab 0

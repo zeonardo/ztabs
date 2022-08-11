@@ -2,7 +2,7 @@
 import React, { useMemo } from 'react'
 import { TypeTabPaneProps, TypeThemeProps } from '../types'
 import StyledTabPane from './styles'
-import * as defaultTheme from "../../../styles/config";
+import * as defaultTheme from '../../../styles/config'
 import objectMerge from '../../../helpers/objectMerge'
 
 const TabPane: React.FC<TypeTabPaneProps> = ({
@@ -13,8 +13,8 @@ const TabPane: React.FC<TypeTabPaneProps> = ({
   active = true,
   theme,
   ...rest
-}: TypeTabPaneProps) : JSX.Element => {
-  const style = useMemo(() => objectMerge({}, defaultTheme, theme)  as TypeThemeProps, [theme])
+}: TypeTabPaneProps): JSX.Element => {
+  const style = useMemo(() => objectMerge({}, defaultTheme, theme) as TypeThemeProps, [theme])
   return (
     <StyledTabPane
       title={title}
@@ -23,9 +23,9 @@ const TabPane: React.FC<TypeTabPaneProps> = ({
       id={`tabpane-${index}`}
       className={`tab__pane${className ? ` ${className}` : ''}${active ? ' active' : ''}`}
       theme={style}
-      { ...rest }
+      {...rest}
     >
-        {children}
+      {children}
     </StyledTabPane>
   )
 }

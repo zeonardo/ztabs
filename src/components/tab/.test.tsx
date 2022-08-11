@@ -9,15 +9,15 @@ const TabController: React.FC = () => {
 
   const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const index = +event.currentTarget.value
-    setActiveIndex(index);
-  };
+    setActiveIndex(index)
+  }
 
   return (
     <div data-tab={activeIndex}>
-      <Tab className="controlled" active={activeIndex} onActiveChange={onClick}>
-        <Tab.Pane title="First Pane">First Pane Body</Tab.Pane>
-        <Tab.Pane title="Second Pane">Second Pane Body</Tab.Pane>
-        <Tab.Pane title="Third Pane">Third Pane Body</Tab.Pane>
+      <Tab className='controlled' active={activeIndex} onActiveChange={onClick}>
+        <Tab.Pane title='First Pane'>First Pane Body</Tab.Pane>
+        <Tab.Pane title='Second Pane'>Second Pane Body</Tab.Pane>
+        <Tab.Pane title='Third Pane'>Third Pane Body</Tab.Pane>
       </Tab>
     </div>
   )
@@ -26,41 +26,41 @@ const TabController: React.FC = () => {
 test('Tab renders', () => {
   render(
     <Tab initialActive={0}>
-      <Tab.Pane title="First Pane">First Pane Body</Tab.Pane>
-      <Tab.Pane title="Second Pane">Second Pane Body</Tab.Pane>
-      <Tab.Pane title="Third Pane">Third Pane Body</Tab.Pane>
-    </Tab>
+      <Tab.Pane title='First Pane'>First Pane Body</Tab.Pane>
+      <Tab.Pane title='Second Pane'>Second Pane Body</Tab.Pane>
+      <Tab.Pane title='Third Pane'>Third Pane Body</Tab.Pane>
+    </Tab>,
   )
   expect(screen.getByText('First Pane Body')).toBeInTheDocument()
-});
+})
 
 test('Tab renders with custom initialActive', () => {
   render(
     <Tab initialActive={2}>
-      <Tab.Pane title="First Pane">First Pane Body</Tab.Pane>
-      <Tab.Pane title="Second Pane">Second Pane Body</Tab.Pane>
-      <Tab.Pane title="Third Pane">Third Pane Body</Tab.Pane>
-    </Tab>
+      <Tab.Pane title='First Pane'>First Pane Body</Tab.Pane>
+      <Tab.Pane title='Second Pane'>Second Pane Body</Tab.Pane>
+      <Tab.Pane title='Third Pane'>Third Pane Body</Tab.Pane>
+    </Tab>,
   )
   expect(screen.getByText('Third Pane Body')).toBeInTheDocument()
-});
+})
 
 test('Tab changes tabs', () => {
   render(
     <Tab initialActive={0}>
-      <Tab.Pane title="First Pane">First Pane Body</Tab.Pane>
-      <Tab.Pane title="Second Pane">Second Pane Body</Tab.Pane>
-      <Tab.Pane title="Third Pane">Third Pane Body</Tab.Pane>
-    </Tab>
+      <Tab.Pane title='First Pane'>First Pane Body</Tab.Pane>
+      <Tab.Pane title='Second Pane'>Second Pane Body</Tab.Pane>
+      <Tab.Pane title='Third Pane'>Third Pane Body</Tab.Pane>
+    </Tab>,
   )
   expect(screen.getByText('First Pane Body')).toBeInTheDocument()
   const tab2 = screen.getByText('Third Pane')
   fireEvent.click(tab2)
   expect(screen.getByText('Third Pane Body')).toBeInTheDocument()
-});
+})
 
 test('Tab can be controlled externally', () => {
-  render(<TabController/>)
+  render(<TabController />)
 
   expect(screen.getByText('Second Pane Body')).toBeInTheDocument()
   expect(screen.queryByText('First Pane Body')).not.toBeInTheDocument()
@@ -70,15 +70,15 @@ test('Tab can be controlled externally', () => {
 
   expect(screen.getByText('First Pane Body')).toBeInTheDocument()
   expect(screen.queryByText('Second Pane Body')).not.toBeInTheDocument()
-});
+})
 
 test('Tab2 changes tabs and keeps them in the DOM', () => {
   render(
     <Tab2 initialActive={0}>
-      <Tab.Pane title="First Pane">First Pane Body</Tab.Pane>
-      <Tab.Pane title="Second Pane">Second Pane Body</Tab.Pane>
-      <Tab.Pane title="Third Pane">Third Pane Body</Tab.Pane>
-    </Tab2>
+      <Tab.Pane title='First Pane'>First Pane Body</Tab.Pane>
+      <Tab.Pane title='Second Pane'>Second Pane Body</Tab.Pane>
+      <Tab.Pane title='Third Pane'>Third Pane Body</Tab.Pane>
+    </Tab2>,
   )
 
   expect(screen.getByText('First Pane Body')).toBeInTheDocument()
@@ -96,4 +96,4 @@ test('Tab2 changes tabs and keeps them in the DOM', () => {
   expect(screen.getByText('First Pane Body')).toBeInTheDocument()
   expect(screen.getByText('Second Pane Body')).toBeInTheDocument()
   expect(screen.getByText('Third Pane Body')).toBeInTheDocument()
-});
+})

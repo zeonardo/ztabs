@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { TypeThemeProps } from "./types"
+import styled from 'styled-components'
+import { TypeThemeProps } from './types'
 
 const StyledTab = styled.div<TypeThemeProps>`
   display: flex;

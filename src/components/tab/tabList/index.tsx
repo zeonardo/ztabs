@@ -14,7 +14,6 @@ const getItem = (
   return (
     <TabListItem
       key={`item${index}`}
-      role='tablist'
       theme={theme}
       className={`tab__item${className ? ' ' + className : ''}`}
     >
@@ -40,7 +39,7 @@ const getItem = (
 
 const TabList: React.FC<TypeTabListProps> = ({ tabs, active, className = '', theme, onClick }) => {
   return (
-    <StyledTabList className={`tab__list${className ? ' ' + className : ''}`} theme={theme}>
+    <StyledTabList role='tablist' className={`tab__list${className ? ' ' + className : ''}`} theme={theme}>
       {tabs.map((tab, index) => getItem(tab, index, className, active, onClick, theme))}
     </StyledTabList>
   )

@@ -19,6 +19,8 @@ const TabPane: React.FC<TypeTabPaneProps> = ({
       index={index}
       id={`tabpane-${index}`}
       className={`tab__pane${className ? ` ${className}` : ''}${active ? ' active' : ''}`}
+      role='tabpanel'
+      hidden={!active}
       theme={theme}
       {...rest}
     >

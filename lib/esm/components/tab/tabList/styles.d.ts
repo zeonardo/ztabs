@@ -1,4 +1,4 @@
-import { TypeTabButtonProps, TypeThemeProps } from "../types";
+import { TypeTabButtonProps, TypeThemeProps } from '../types';
 declare type StyleThemeProps = {
     theme?: TypeThemeProps;
 };

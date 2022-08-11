@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { TypeThemeProps } from "../types";
+import { TypeThemeProps } from '../types';
 declare const StyledTabPane: import("styled-components").StyledComponent<"div", any, import("react").HTMLAttributes<HTMLDivElement> & {
     title: string;
     index?: number | undefined;

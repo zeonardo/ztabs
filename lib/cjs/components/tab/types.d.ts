@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 declare type TabDefaultProps = React.HTMLAttributes<HTMLElement> & {
     children: [TypeTabPaneChild, ...TypeTabPaneChild[]];
     theme?: TypeThemeProps;
@@ -41,7 +41,7 @@ export interface TypeThemeProps {
         graydark?: string;
     };
 }
-export declare type TypeTabProps = (TabControlledProps | TabUncontrolledProps);
+export declare type TypeTabProps = TabControlledProps | TabUncontrolledProps;
 export declare type TypeTabPaneProps = React.HTMLAttributes<HTMLDivElement> & {
     title: string;
     index?: number;
@@ -52,7 +52,7 @@ export declare type TypeTabPaneChild = React.ReactElement<TypeTabPaneProps>;
 export declare type TypeTabButtonProps = {
     active: boolean;
 };
-export declare type TypeTabListProps = Omit<React.HTMLAttributes<HTMLDivElement>, "onClick"> & {
+export declare type TypeTabListProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick'> & {
     tabs: string[];
     active: number;
     onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;

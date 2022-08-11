@@ -40,7 +40,7 @@ const getItem = (
   )
 }
 
-const TabList: React.FC<TypeTabListProps> = ({ tabs, active, className, theme, onClick }) => {
+const TabList: React.FC<TypeTabListProps> = ({ tabs, active, className = '', theme, onClick }) => {
   const style = useMemo(() => objectMerge({}, defaultTheme, theme) as TypeThemeProps, [theme])
   return (
     <StyledTabList className={`tab__list${className ? ' ' + className : ''}`} theme={style}>

@@ -1,2 +1,2 @@
-import Tab from "./components/tab";
+import Tab from './components/tab';
 export default Tab;

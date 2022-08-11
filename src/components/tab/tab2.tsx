@@ -39,12 +39,13 @@ const Tab2 = ({
 
   return panes.length ? (
     <StyledTab className={`tab${className ? ' ' + className : ''}`} theme={style} {...rest}>
-      <TabList tabs={tabTitles} onClick={onActiveChange || onClick} active={activeIndex} />
+      <TabList tabs={tabTitles} onClick={onActiveChange || onClick} active={activeIndex} theme={style} />
       {_renderedPanes.map((pane, index) =>
         cloneElement(pane, {
           key: `pane${index}`,
           index: index,
           active: activeIndex === index,
+          theme: style,
         }),
       )}
     </StyledTab>

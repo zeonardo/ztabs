@@ -25,8 +25,10 @@ const Tab2 = ({
   )
 
   const tabTitles = panes.map((child) => child.props.title)
-  const activePane = React.Children.toArray(children)[activeIndex] as TypeTabPaneChild
-  if (!_renderedPanes[activeIndex]) _renderedPanes[activeIndex] = activePane //adds new render to cached list
+
+  const activePane = React.Children.toArray(children)[activeIndex]
+    ? (React.Children.toArray(children)[activeIndex] as TypeTabPaneChild)
+    : undefined
 
   const onClick = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
     const index = +event.currentTarget.value
@@ -36,6 +38,8 @@ const Tab2 = ({
   useEffect(() => {
     if (active !== undefined) setActiveIndex(active)
   }, [active])
+
+  if (!_renderedPanes[activeIndex] && activePane) _renderedPanes[activeIndex] = activePane //adds new render to cached list
 
   return panes.length ? (
     <StyledTab className={`tab${className ? ' ' + className : ''}`} theme={style} {...rest}>

@@ -24,7 +24,9 @@ const Tab = ({
 
   const tabTitles = panes.map((child) => child.props.title)
   const pane = panes[activeIndex]
-  const activePane = cloneElement(pane, { key: `pane${activeIndex}`, index: activeIndex, active: true, theme: style })
+  const activePane = pane
+    ? cloneElement(pane, { key: `pane${activeIndex}`, index: activeIndex, active: true, theme: style })
+    : undefined
 
   const onClick = useCallback((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const index = +event.currentTarget.value

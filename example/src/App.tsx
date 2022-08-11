@@ -5,7 +5,8 @@ import Tab from 'ztabs'
 function App() {
   return (
     <div className='App'>
-      <Tab className='uncontrolled' initialActive={0}>
+      <h1>ZTABS</h1>
+      <Tab className='uncontrolled' initialActive={0} theme={{ color: { primary: "#00f" }}}>
         <Tab.Pane title='First Pane'>
           <>
             <strong>First</strong> Pane Body

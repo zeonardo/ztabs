@@ -1,4 +1,5 @@
 ![GitHub all releases](https://img.shields.io/github/downloads/zeonardo/ztabs/total)
+![GitHub last commit](https://img.shields.io/github/last-commit/zeonardo/ztabs)
 
 # ztabs
 

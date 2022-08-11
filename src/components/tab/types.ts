@@ -22,6 +22,7 @@ type TabUncontrolledProps = TabDefaultProps & {
 }
 
 export interface TypeThemeProps {
+  //TODO: use ThemeProvider
   breakpoint?: {
     small?: {
       min?: string

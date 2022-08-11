@@ -1,12 +1,23 @@
 import React, { cloneElement, useEffect, useState, useMemo, useCallback } from 'react'
 import TabPane from './tabPane'
 import TabList from './tabList'
-import { TypeTabPaneChild, TypeTabProps } from './types'
+import { TypeTabPaneChild, TypeTabProps, TypeThemeProps } from './types'
+import { default as defaultTheme } from '../../styles/config'
 import StyledTab from './styles'
+import objectMerge from '../../helpers/objectMerge'
 
 const _renderedPanes: TypeTabPaneChild[] = [] //cache constant instead of extra state
 
-const Tab2 = ({ className, children, active, initialActive, onActiveChange, ...rest }: TypeTabProps): JSX.Element => {
+const Tab2 = ({
+  className,
+  children,
+  active,
+  initialActive,
+  onActiveChange,
+  theme,
+  ...rest
+}: TypeTabProps): JSX.Element => {
+  const style = useMemo(() => objectMerge({}, defaultTheme, theme) as TypeThemeProps, [theme])
   const panes = useMemo(() => React.Children.map(children, (child) => child), [children])
 
   const [activeIndex, setActiveIndex] = useState(
@@ -27,7 +38,7 @@ const Tab2 = ({ className, children, active, initialActive, onActiveChange, ...r
   }, [active])
 
   return panes.length ? (
-    <StyledTab className={`tab${className ? ' ' + className : ''}`} {...rest}>
+    <StyledTab className={`tab${className ? ' ' + className : ''}`} theme={style} {...rest}>
       <TabList tabs={tabTitles} onClick={onActiveChange || onClick} active={activeIndex} />
       {_renderedPanes.map((pane, index) =>
         cloneElement(pane, {

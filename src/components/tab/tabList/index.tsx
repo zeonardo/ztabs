@@ -14,7 +14,7 @@ const getItem = (
   return (
     <TabListItem key={`item${index}`} theme={theme} className={`tab__item${className ? ' ' + className : ''}`}>
       <TabListButton
-        id={`btn-${index}`}
+        id={`btn${index}`}
         className={`tab__button${isActive ? ' tab__button--active' : ''}`}
         active={isActive}
         title={tab}
@@ -25,6 +25,7 @@ const getItem = (
         name={tab}
         aria-controls={`tabpane-${index}`}
         aria-selected={isActive}
+        tabIndex={isActive ? 0 : -1}
         theme={theme}
       >
         {tab}

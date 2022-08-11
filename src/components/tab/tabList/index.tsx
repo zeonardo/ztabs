@@ -12,11 +12,7 @@ const getItem = (
 ): JSX.Element => {
   const isActive = index === active
   return (
-    <TabListItem
-      key={`item${index}`}
-      theme={theme}
-      className={`tab__item${className ? ' ' + className : ''}`}
-    >
+    <TabListItem key={`item${index}`} theme={theme} className={`tab__item${className ? ' ' + className : ''}`}>
       <TabListButton
         id={`btn-${index}`}
         className={`tab__button${isActive ? ' tab__button--active' : ''}`}

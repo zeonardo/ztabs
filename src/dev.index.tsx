@@ -15,7 +15,7 @@ const TabController: React.FC = () => {
 
   return (
     <div data-tab={active}>
-      <Tab className='controlled' active={active} onActiveChange={onClick} theme={{ color: { primary: '#0f0' } }}>
+      <Tab className='controlled' active={active} onActiveChange={onClick} theme={{ color: { primary: '#026202' } }}>
         <Tab.Pane title='First Pane'>First Pane Body</Tab.Pane>
         <Tab.Pane title='Second Pane'>Second Pane Body</Tab.Pane>
         <Tab.Pane title='Third Pane'>Third Pane Body</Tab.Pane>
@@ -28,7 +28,7 @@ root.render(
   <React.StrictMode>
     <h1>ZTABS</h1>
     <h2>uncontrolled</h2>
-    <Tab className='uncontrolled' initialActive={0} theme={{ color: { primary: '#f00' } }}>
+    <Tab className='uncontrolled' initialActive={0} theme={{ color: { primary: '#620202' } }}>
       <Tab.Pane title='First Pane'>
         <>
           <strong>First</strong> Pane Body
@@ -46,7 +46,7 @@ root.render(
     <TabController />
     <hr />
     <h2>Tab2</h2>
-    <Tab2 className='uncontrolled' initialActive={0} theme={{ color: { primary: '#00f' } }}>
+    <Tab2 className='uncontrolled' initialActive={0} theme={{ color: { primary: '#020262' } }}>
       <Tab2.Pane title='First Pane'>
         <>
           <strong>First</strong> Pane Body

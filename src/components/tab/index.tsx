@@ -16,16 +16,16 @@ const Tab = ({
   ...rest
 }: TypeTabProps): JSX.Element => {
   const style = useMemo(() => objectMerge({}, defaultTheme, theme) as TypeThemeProps, [theme])
-  const panes = useMemo(() => React.Children.map(children, (child) => child), [children])
+  const tabPaneArray = useMemo(() => React.Children.map(children, (child) => child), [children])
 
   const [activeIndex, setActiveIndex] = useState(
-    Math.min(initialActive === undefined ? active || 0 : initialActive, panes.length - 1),
+    Math.min(initialActive === undefined ? active || 0 : initialActive, tabPaneArray.length - 1),
   )
 
-  const tabTitles = panes.map((child) => child.props.title)
-  const pane = panes[activeIndex]
-  const activePane = pane
-    ? cloneElement(pane, { key: `pane${activeIndex}`, index: activeIndex, active: true, theme: style })
+  const tabTitles = tabPaneArray.map((child) => child.props.title)
+  const tabPane = tabPaneArray[activeIndex]
+  const tabPaneActive = tabPane
+    ? cloneElement(tabPane, { key: `pane${activeIndex}`, index: activeIndex, active: true, theme: style })
     : undefined
 
   const onClick = useCallback((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -37,10 +37,10 @@ const Tab = ({
     if (active !== undefined) setActiveIndex(active)
   }, [active])
 
-  return panes.length ? (
+  return tabPaneActive ? (
     <StyledTab className={`tab${className ? ` ${className}` : ''}`} theme={style} {...rest}>
       <TabList tabs={tabTitles} onClick={onActiveChange || onClick} active={activeIndex} theme={style} />
-      {activePane}
+      {tabPaneActive}
     </StyledTab>
   ) : (
     <></>

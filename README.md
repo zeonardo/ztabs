@@ -50,18 +50,30 @@ import Tab from "ztabs";
 ### Tab
 
 - `initialActive` (uncontrolled mode): zero-based index of the default active tab. Tab changes will be handled by `Tab`
-  - `<Tab initialActive={0}>`
-- `active` (controlled mode): zero-based index of the currently ative tab. Tab changes will be controlled by this value through `onActiveChange`
-  - `<Tab active={value}>`
+  - ```html
+  <Tab initialActive={0}>
+  ```
+- `active` (controlled mode): zero-based index of the currently active tab. Tab changes will be controlled by this `{value}` through `onActiveChange`
+  - ```html
+  <Tab active={value}>
+  ```
 - `onActiveChange` (controlled mode): event handler function called upon tab click
-  - `<Tab active={value} onActiveChange={(event: React.MouseEvent<HTMLButtonElement>) => setValue(+event.currentTarget.value)} >`
+  - ```html
+  <Tab active={value} onActiveChange={(event: React.MouseEvent<HTMLButtonElement>) => setValue(+event.currentTarget.value)} >
+  ```
 
 ### Tab.Pane
 
 - `title`: Tab name
-  - `<Tab.Pane title="MyTab" >`
+  - ```html
+  <Tab.Pane title="MyTab" >
+  ```
 - `"children"`: Tab content
-  - `<Tab.Pane title="MyTab" > <div>Tab Content</div> </Tab.Pane>`
+  - ```html
+  <Tab.Pane title="MyTab" >
+    <div>Tab Content</div>
+  </Tab.Pane>
+  ```
 
 
 ## Credits

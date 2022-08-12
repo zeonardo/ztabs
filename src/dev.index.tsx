@@ -1,3 +1,8 @@
+/*
+Copy + paste the content of this file replacing the content into ./index.tsx
+DO NOT FORGET to revert ./index.tsx content after development
+*/
+
 import Tab from './components/tab'
 import Tab2 from './components/tab/tab2'
 

@@ -1,4 +1,4 @@
-import React, { cloneElement, useEffect, useState, useMemo, useCallback } from 'react'
+import React, { cloneElement, useEffect, useState, useMemo, useCallback, useId } from 'react'
 import TabPane from './tabPane'
 import TabList from './tabList'
 import { TypeTabProps, TypeThemeProps } from './types'
@@ -15,6 +15,7 @@ const Tab = ({
   theme,
   ...rest
 }: TypeTabProps): JSX.Element => {
+  const uniqueId = useId()
   const style = useMemo(() => objectMerge({}, defaultTheme, theme) as TypeThemeProps, [theme])
   const tabPaneArray = useMemo(() => React.Children.map(children, (child) => child), [children])
 
@@ -25,7 +26,7 @@ const Tab = ({
   const tabTitles = tabPaneArray.map((child) => child.props.title)
   const tabPane = tabPaneArray[activeIndex]
   const tabPaneActive = tabPane
-    ? cloneElement(tabPane, { key: `pane${activeIndex}`, index: activeIndex, active: true, theme: style })
+    ? cloneElement(tabPane, { key: `pane${activeIndex}`, index: activeIndex, active: true, theme: style, id: uniqueId })
     : undefined
 
   const onClick = useCallback((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -39,7 +40,7 @@ const Tab = ({
 
   return tabPaneActive ? (
     <StyledTab className={`tab${className ? ` ${className}` : ''}`} theme={style} {...rest}>
-      <TabList tabs={tabTitles} onClick={onActiveChange || onClick} active={activeIndex} theme={style} />
+      <TabList tabs={tabTitles} onClick={onActiveChange || onClick} active={activeIndex} theme={style} id={uniqueId} />
       {tabPaneActive}
     </StyledTab>
   ) : (

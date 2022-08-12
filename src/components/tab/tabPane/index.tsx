@@ -10,6 +10,7 @@ const TabPane: React.FC<TypeTabPaneProps> = ({
   index = 0,
   active = true,
   theme,
+  id,
   ...rest
 }: TypeTabPaneProps): JSX.Element => {
   return (
@@ -17,10 +18,10 @@ const TabPane: React.FC<TypeTabPaneProps> = ({
       title={title}
       active={active}
       index={index}
-      id={`tabpane-${index}`}
+      id={`${id}-tabpane-${index}`}
       className={`tab__pane${className ? ` ${className}` : ''}${active ? ' active' : ''}`}
       role='tabpanel'
-      aria-labelledby={`btn${index}`}
+      aria-labelledby={`${id}-btn-${index}`}
       hidden={!active}
       theme={theme}
       {...rest}

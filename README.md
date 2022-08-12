@@ -1,6 +1,6 @@
-![GitHub all releases](https://img.shields.io/github/downloads/zeonardo/ztabs/total)
 ![GitHub last commit](https://img.shields.io/github/last-commit/zeonardo/ztabs)
 ![npm](https://img.shields.io/npm/v/ztabs)
+![beta](https://img.shields.io/badge/-beta-yellow)
 
 # ztabs
 
@@ -49,32 +49,36 @@ import Tab from "ztabs";
 
 ### Tab
 
-- `initialActive` (uncontrolled mode): zero-based index of the default active tab. Tab changes will be handled by `Tab`
-  - ```html
+> `initialActive` (uncontrolled mode): zero-based index of the default active tab.  
+Tab changes will be handled by `Tab`
+```jsx
   <Tab initialActive={0}>
-  ```
-- `active` (controlled mode): zero-based index of the currently active tab. Tab changes will be controlled by this `{value}` through `onActiveChange`
-  - ```html
+```
+
+> `active` (controlled mode): zero-based index of the currently active tab.  
+Tab changes will be controlled by this `{value}` through `onActiveChange`
+```jsx
   <Tab active={value}>
-  ```
-- `onActiveChange` (controlled mode): event handler function called upon tab click
-  - ```html
+```
+
+> `onActiveChange` (controlled mode): event handler function called upon tab click
+```jsx
   <Tab active={value} onActiveChange={(event: React.MouseEvent<HTMLButtonElement>) => setValue(+event.currentTarget.value)} >
-  ```
+```
 
 ### Tab.Pane
 
-- `title`: Tab name
-  - ```html
-  <Tab.Pane title="MyTab" >
-  ```
-- `"children"`: Tab content
-  - ```html
-  <Tab.Pane title="MyTab" >
-    <div>Tab Content</div>
-  </Tab.Pane>
-  ```
+> `title`: Tab name
+```jsx
+<Tab.Pane title="MyTab" >
+```
 
+> `<children/>`: Tab content
+```jsx
+<Tab.Pane title="MyTab" >
+    <div>Tab Content</div>
+</Tab.Pane>
+```
 
 ## Credits
 
@@ -82,8 +86,8 @@ TODO: Write credits :)
 
 ## Built With
 
-* React
-* TypeScript
+* [React](https://reactjs.org/)
+* [TypeScript](https://www.typescriptlang.org/)
 * Love
 
 ## Versioning
